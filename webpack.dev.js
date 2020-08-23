@@ -6,10 +6,10 @@ module.exports = merge(common, {
   mode: "development",
   devtool: "source-map",
   devServer: {
-    contentBase: "./dist",
+    contentBase: path.resolve(__dirname, "dist/index.html"),
     hot: true,
     port: 3000,
-    publicPath: "./",
+    publicPath: "/",
     writeToDisk: true
   }
 });

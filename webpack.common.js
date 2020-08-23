@@ -9,11 +9,11 @@ module.exports = {
     app: "./src/index.js"
   },
   plugins: [
-    new CleanWebpackPlugin({
-      cleanStaleWebpackAssets: false
-    }),
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: "./template/template.html"
+      template: "./src/template.html",
+      favicon: "./src/assets/png/favicon-32x32.png",
+      inject: true
     })
   ],
   module: {
@@ -22,16 +22,38 @@ module.exports = {
         test: /\.j(s|sx)$/,
         exclude: /node_modules/,
         use: ["babel-loader"]
+      },
+      {
+        test: /\.(sc|c)ss$/,
+        exclude: /node_modules/,
+        use: [
+          "style-loader",
+          {
+            loader: "css-loader",
+            options: {
+              importLoaders: 1
+            }
+          },
+          "postcss-loader"
+        ]
+      },
+      {
+        test: /\.svg$/,
+        use: ["@svgr/webpack", "url-loader"]
+      },
+      {
+        test: /\.(jpg|jpeg|png)$/,
+        use: ["url-loader"]
       }
     ]
   },
   resolve: {
     alias: {
-      scss: path.resolve(__dirname, "./src/scss"),
-      components: path.resolve(__dirname, "./src/components"),
-      assets: path.resolve(__dirname, "./src/assets")
+      scss: path.resolve(__dirname, "src", "scss"),
+      components: path.resolve(__dirname, "src", "components"),
+      assets: path.resolve(__dirname, "src", "assets")
     },
-    extensions: [".", ".scss", ".sass", ".jsx", ".js"]
+    extensions: [".jsx", ".js", ".scss", ".sass"]
   },
   output: {
     filename: "[name].bundle.js",
