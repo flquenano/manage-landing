@@ -1,0 +1,76 @@
+@import "scss/variables";
+@import "scss/mixins";
+
+// .burger {
+//   & path {
+//     transition: all 500ms ease-in;
+//   }
+
+//   &:hover {
+//     & path {
+//       fill: #ff0000;
+//     }
+//   }
+// }
+
+.nav {
+  width: clamp(20.5rem, 80%, 1110px);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2.5rem 0;
+  @include tablet-ls {
+    margin: 4rem 0;
+  }
+  @include sm {
+    margin: 4rem 0 6.5rem;
+  }
+  //Good
+  &__logo {
+    width: clamp(6.875rem, 11vw, 9.1875rem);
+  }
+  &__list-desktop {
+    display: none;
+    @include sm {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      & .nav__item {
+        font-size: 0.75rem;
+        font-weight: $font-weight-medium;
+        & a {
+          transition: all 200ms;
+          &:hover {
+            color: $primary-bright-red;
+          }
+        }
+      }
+      list-style: none;
+      .nav__item {
+        margin: 0 1.5rem;
+      }
+    }
+    @include md {
+      position: relative;
+      .nav__item {
+        margin-left: 1rem;
+        font-size: 0.8125rem;
+      }
+    }
+  }
+  &__btn {
+    display: none;
+    @include md {
+      display: block;
+      position: relative;
+      margin-top: -0.5rem;
+    }
+  }
+
+  &__mobile {
+    @include sm {
+      display: none;
+    }
+  }
+}

@@ -31,10 +31,11 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
-              importLoaders: 1
+              importLoaders: 2
             }
           },
-          "postcss-loader"
+          "postcss-loader",
+          "sass-loader"
         ]
       },
       {
@@ -57,6 +58,6 @@ module.exports = {
   },
   output: {
     filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "dist")
+    path: path.resolve(__dirname, "public")
   }
 };

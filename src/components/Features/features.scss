@@ -1,0 +1,132 @@
+@import "scss/variables";
+@import "scss/mixins";
+
+.features {
+  width: clamp(375px, 90%, 1110px);
+  margin-bottom: 1rem;
+  @include sm {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    margin-bottom: 7rem;
+  }
+  &__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-flow: column nowrap;
+    margin-bottom: 4rem;
+    @include tablet-pt {
+      margin-bottom: 5rem;
+    }
+    @include sm {
+      padding: 0;
+      width: 100%;
+      padding-left: 0.25rem;
+      text-align: start;
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+    width: 100%;
+    &-heading {
+      width: clamp(16.5rem, 80%, 30rem);
+      position: relative;
+      line-height: 45px;
+      letter-spacing: -0.62px;
+      font-weight: $font-weight-extra-bold;
+      font-size: clamp(1.9rem, 3vw, 2.5rem);
+      margin-bottom: 0.75rem;
+      @include sm {
+        line-height: 44px;
+        letter-spacing: -0.71px;
+        margin-top: -0.5rem;
+        margin-bottom: 1.8rem;
+      }
+    }
+    &-text {
+      width: clamp(19.5rem, 80%, 22rem);
+      @include sm {
+        text-align: start;
+      }
+    }
+  }
+  &__content {
+    position: relative;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: -0.75rem;
+    width: 100%;
+  }
+  &__item {
+    margin-bottom: 2.5rem;
+    @include sm {
+    }
+    &-header {
+      position: relative;
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: flex-start;
+      margin-left: 1rem;
+      margin-bottom: 0.75rem;
+      &-number {
+        position: relative;
+        z-index: 2;
+        width: 4.25rem;
+        height: 2.5rem;
+        display: grid;
+        place-items: center;
+        border-radius: 50px;
+      }
+      &-title {
+        width: 100%;
+        z-index: -1;
+        flex: 1 0 25rem;
+        height: 2.5rem;
+        position: absolute;
+        margin-left: 2.25rem;
+        background-color: $neutral-pale-red;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        display: grid;
+        justify-items: start;
+        align-items: center;
+        white-space: nowrap;
+        padding-left: 3rem;
+        @include sm {
+          background-color: $neutral-white;
+          margin-left: 2.75rem;
+        }
+      }
+    }
+    &-text {
+      position: relative;
+      margin: 0 auto;
+      text-align: start;
+      max-width: 450px;
+      padding: 0 1rem;
+      line-height: 28px;
+      @include tablet-pt {
+        padding-left: 5rem;
+        max-width: 550px;
+      }
+      @include sm {
+        text-align: start;
+        p {
+          line-height: 26px;
+        }
+        padding-left: 6rem;
+      }
+    }
+    @include tablet-pt {
+      margin-bottom: 5rem;
+    }
+    @include md {
+      width: 100%;
+      margin-bottom: 2.25rem;
+    }
+  }
+}

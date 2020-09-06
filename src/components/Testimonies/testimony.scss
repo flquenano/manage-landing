@@ -1,0 +1,86 @@
+@import "scss/variables";
+@import "scss/mixins";
+
+.splide {
+  position: relative;
+  &__pagination__page {
+    border: 1px solid $primary-bright-red !important;
+    background-color: $neutral-white;
+    height: 10px;
+    width: 10px;
+    &.is-active {
+      background: $primary-bright-red !important;
+      transform: none;
+    }
+    @include md {
+      display: none;
+    }
+  }
+  &__arrows {
+    display: none;
+  }
+  &__slide {
+    width: clamp(375px, 90%, 1440px);
+  }
+}
+
+.testimony {
+  position: relative;
+  width: clamp(375px, 100%, 1440px);
+  margin-bottom: 3rem;
+  @include sm {
+    margin-bottom: 10rem;
+  }
+  &__header {
+    font-weight: $font-weight-extra-bold;
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    text-align: center;
+    margin-bottom: 4rem;
+    line-height: 45px;
+    letter-spacing: -0.66px;
+    @include md {
+      line-height: 44px;
+      letter-spacing: -0.71px;
+    }
+  }
+  &__item {
+    position: relative;
+    margin: 0 auto;
+    width: clamp(21.25rem, 90%, 33.75rem);
+    background: $neutral-testimony-bg;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.25rem;
+    margin-bottom: 3rem;
+    &-profile {
+      width: 4.5rem;
+      position: relative;
+      margin-top: -2.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    &-heading {
+      font-size: 1rem;
+      font-weight: $font-weight-bold;
+      letter-spacing: -0.29px;
+      margin-bottom: 1.5rem;
+    }
+    &-text {
+      line-height: 26px;
+      text-align: center;
+      padding-bottom: 2rem;
+      width: 90%;
+      color: $neutral-grayish-blue;
+    }
+    @include sm {
+      min-height: 243px;
+      margin-bottom: 0;
+    }
+  }
+  &__btn {
+    margin-top: 2.5rem;
+    text-align: center;
+  }
+}

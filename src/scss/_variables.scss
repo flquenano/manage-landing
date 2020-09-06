@@ -1,11 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@400;500;700;800&display=swap");
+
 $primary-bright-red: hsl(12, 88%, 59%);
 $primary-dark-blue: hsl(228, 39%, 23%);
 $neutral-grayish-blue: hsl(227, 12%, 61%);
+$neutral-testimony-bg: #fafafa;
 $neutral-dark-blue: hsl(233, 12%, 13%);
 $neutral-pale-red: hsl(13, 100%, 96%);
 $neutral-light-gray: hsl(0, 0%, 98%);
-
+$neutral-white: #ffffff;
+$neutral-warning: #f33c3c;
+//Font Attributes
+$font-size: 16px;
 $font-family: "Be Vietnam", sans-serif;
-$font-regular: 400;
-$font-medium: 500;
-$font-bold: 700;
+$font-weight-light: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+
+//Font Sizes
+$font-x-small: 0.5rem;
+$font-small: 0.75rem;
+$font-base: 1rem;
+$font-medium: 1.25rem;
+$font-large: 1.5rem;
+$font-x-large: 2rem;
+$font-huge: 3rem;

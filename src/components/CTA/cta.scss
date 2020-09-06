@@ -1,0 +1,52 @@
+@import "scss/variables";
+@import "scss/mixins";
+
+.cta {
+  width: 100%;
+  padding: 6rem 0;
+  background: $primary-bright-red
+    url("assets/svg/bg-simplify-section-mobile.svg") center left/ 100px
+    no-repeat;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  &__header {
+    width: clamp(19.5rem, 70%, 33.75rem);
+    text-align: center;
+    font-size: 2.5rem;
+    line-height: 50px;
+    letter-spacing: -1px;
+    color: $neutral-white;
+    margin-bottom: 1.75rem;
+  }
+  &__content {
+    width: clamp(375px, 90%, 1110px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include sm {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  @include sm {
+    padding: 3rem 0;
+    background: $primary-bright-red
+      url("assets/svg/bg-simplify-section-desktop.svg") bottom right -250px / 100%
+      no-repeat;
+    &__header {
+      position: relative;
+      top: 1rem;
+      width: 28rem;
+      text-align: start;
+      line-height: 44px;
+      letter-spacing: -0.71px;
+    }
+    &__btn {
+      position: relative;
+      top: 1.75rem;
+      left: 0.25rem;
+    }
+  }
+}
